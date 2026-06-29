@@ -83,6 +83,18 @@
             "2": true,
             "3": false
           }
+        },
+        {
+          "p": "박현성",
+          "c": "서울아산내과",
+          "d": "김유석",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": false
+          }
         }
       ]
     }
