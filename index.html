@@ -236,7 +236,6 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   .topbar-title{font-size:14px}
   .topbar-sub{font-size:10px}
   .btn-add{padding:8px 14px;font-size:13px}
-
   .dashboard{padding:12px}
   .dash-title{font-size:10px;margin-bottom:10px}
   .dash-stats{gap:6px;margin-bottom:12px}
@@ -247,14 +246,11 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   .member-avatar{width:22px;height:22px;font-size:10px}
   .member-name{font-size:12px}
   .member-count{font-size:12px}
-
   .menu-bar{padding:8px 12px;gap:6px}
   .menu-btn{padding:7px 11px;font-size:12px}
-
   .view-tab{padding:10px 14px;font-size:12px}
   .filter-scroll{padding:8px 12px}
   .chip{padding:6px 11px;font-size:11px}
-
   .month-header{padding:14px 12px 6px;font-size:10px}
   .card-list{padding:0 10px;gap:7px}
   .card-head{gap:10px;padding:12px 12px 8px}
@@ -267,21 +263,17 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   .tag{font-size:10px;padding:2px 7px}
   .card-actions{gap:3px}
   .act-btn{padding:6px 8px;font-size:13px;border-radius:7px}
-
   .att-section{padding:0 12px 10px}
   .att-pills{gap:4px}
   .att-pill{font-size:11px;padding:5px 8px 5px 7px;gap:4px}
   .add-att-btn{font-size:11px;padding:5px 10px}
-
   .fab{bottom:20px;right:14px;width:50px;height:50px;font-size:24px}
   .chat-fab{bottom:20px;right:72px;width:50px;height:50px;font-size:22px}
-
   .sheet{padding:18px 16px 32px}
   .sheet-title{font-size:16px;margin-bottom:16px}
   .finput{padding:10px 12px;font-size:14px}
   .btn-save,.btn-cancel{padding:12px;font-size:13px}
   .f2col{gap:8px}
-
   .cal-wrap{padding:12px 10px 80px}
   .cal-month-title{font-size:16px}
   .cal-nav-btn{padding:7px 14px;font-size:16px}
@@ -406,7 +398,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
         <div class="f2col"><div class="frow"><label class="flabel">시작일</label><input type="date" id="ps-start" class="finput"></div><div class="frow"><label class="flabel">종료일</label><input type="date" id="ps-end" class="finput"></div></div>
         <div class="frow"><label class="flabel">심포지엄명 / 장소</label><input type="text" id="ps-name" class="finput"></div>
         <div class="f2col"><div class="frow"><label class="flabel">품목</label><input type="text" id="ps-product" class="finput"></div><div class="frow"><label class="flabel">PM</label><input type="text" id="ps-pm" class="finput"></div></div>
-        <div class="frow"><label class="flabel">동부1 TO</label><input type="text" id="ps-to" class="finput"></div>
+        <div class="frow"><label class="flabel">북부2 TO</label><input type="text" id="ps-to" class="finput"></div>
         <div class="frow"><label class="flabel">관련 링크</label><input type="text" id="ps-link" class="finput" placeholder="https://..."></div>
         <div class="frow"><label class="flabel">상태</label><select id="ps-status" class="finput"><option value="open">신청 가능</option><option value="comp">경쟁 모객</option><option value="closed">마감</option><option value="tbd">공지 예정</option></select></div>
         <div class="sheet-actions"><button class="btn-cancel" onclick="closeOv('ov-symp')">취소</button><button class="btn-save" id="btn-save-parsed" onclick="saveParsed()">저장</button></div>
@@ -538,7 +530,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
     <button class="chat-close" onclick="closeChat()">닫기</button>
   </div>
   <div class="chat-messages" id="chat-messages">
-    <div class="chat-msg ai">안녕하세요! 동부1 심포지엄 데이터에 대해 무엇이든 물어보세요 😊</div>
+    <div class="chat-msg ai">안녕하세요! 북부2 심포지엄 데이터에 대해 무엇이든 물어보세요 😊</div>
   </div>
   <div class="chat-quick">
     <button class="quick-btn" onclick="quickAsk('오늘 이후 예정된 심포지엄은 몇 개야?')">📅 예정 일정</button>
@@ -555,6 +547,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
 <div class="toast" id="toast"></div>
 
 <script>
+/* ✅ 수정된 부분: GH_OWNER, GH_REPO */
 const GH_OWNER='juhopark3910-bit', GH_REPO='simpoN2';
 const GH_API=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data.json`;
 const K_GH='dongbu1_gh', K_GM='dongbu1_gm', LOG_KEY='dongbu1_log', K_MEMBERS='dongbu1_members';
@@ -570,7 +563,6 @@ const ghToken=()=>localStorage.getItem(K_GH)||'';
 const gmKey=()=>localStorage.getItem(K_GM)||'';
 const getHotels=()=>hotels;
 
-// ── 설정 ──
 function openSetup(){ document.getElementById('setup-gh-token').value=ghToken(); document.getElementById('setup-gemini-key').value=gmKey(); document.getElementById('setup-msg').textContent=''; document.getElementById('setup-screen').classList.add('show'); }
 function closeSetup(){ document.getElementById('setup-screen').classList.remove('show'); }
 async function saveSetup(){
@@ -590,7 +582,6 @@ async function saveSetup(){
 }
 function setSetupMsg(m,e){ const el=document.getElementById('setup-msg'); el.textContent=m; el.className='setup-msg'+(e?' err':' ok'); }
 
-// ── GitHub 데이터 ──
 function b64enc(s){ const b=new TextEncoder().encode(s); let r=''; b.forEach(c=>r+=String.fromCharCode(c)); return btoa(r); }
 function b64dec(b){ const s=atob(b.replace(/\n/g,'')); const u=new Uint8Array(s.length); for(let i=0;i<s.length;i++)u[i]=s.charCodeAt(i); return new TextDecoder().decode(u); }
 
@@ -608,7 +599,6 @@ async function loadData(){
       const j=await r.json(); fileSha=j.sha;
       const parsed=JSON.parse(b64dec(j.content));
       if(Array.isArray(parsed)){
-        // 구버전 → 마이그레이션
         data=parsed; hotels=[];
         await _push();
       } else {
@@ -638,7 +628,6 @@ async function saveData(){
 function isPast(s){ const t=new Date(); t.setHours(0,0,0,0); return new Date(s.de+'T00:00:00')<t; }
 function setFilter(f,el){ filter=f; document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on')); el.classList.add('on'); render(); }
 
-// ── 대시보드 ──
 function renderDashboard(){
   const today=new Date(); today.setHours(0,0,0,0);
   const upcoming=data.filter(s=>!isPast(s));
@@ -646,7 +635,6 @@ function renderDashboard(){
   document.getElementById('stat-total').textContent=data.length;
   document.getElementById('stat-upcoming').textContent=upcoming.length;
   document.getElementById('stat-applied').textContent=applied.length;
-
   const members=getMembers();
   const counts={};
   members.forEach(m=>counts[m]=0);
@@ -661,7 +649,6 @@ function renderDashboard(){
   }).join('');
 }
 
-// ── 렌더 ──
 function render(){
   renderDashboard();
   let items=[...data].sort((a,b)=>a.ds.localeCompare(b.ds));
@@ -673,7 +660,6 @@ function render(){
   else if(filter==='open') items=items.filter(s=>s.status!=='closed'&&!isPast(s));
   else if(filter==='applied') items=items.filter(s=>s.att&&s.att.length>0);
   else items.sort((a,b)=>{ const ap=isPast(a),bp=isPast(b); if(ap!==bp)return ap?1:-1; return a.ds.localeCompare(b.ds); });
-
   const el=document.getElementById('main-list');
   if(!items.length){ el.innerHTML='<div class="empty">📭 해당하는 심포지엄이 없습니다.</div>'; return; }
   const groups={};
@@ -739,7 +725,6 @@ function card(s){
   </div>`;
 }
 
-// ── AI 분석 ──
 async function parseMail(){
   const text=document.getElementById('mail-paste').value.trim();
   if(!text){ toast('메일 내용을 붙여넣어 주세요'); return; }
@@ -779,7 +764,6 @@ async function parseMail(){
 }
 function setParseMsg(m,e){ const el=document.getElementById('parse-msg'); el.textContent=m; el.style.color=e?'var(--red-mid)':'var(--teal-mid)'; }
 
-// ── 로그 ──
 function addLog(action,name,date){ const logs=JSON.parse(localStorage.getItem(LOG_KEY)||'[]'); logs.unshift({action,name,date:date||'',time:new Date().toISOString()}); if(logs.length>50)logs.pop(); localStorage.setItem(LOG_KEY,JSON.stringify(logs)); }
 function openLog(){
   const logs=JSON.parse(localStorage.getItem(LOG_KEY)||'[]');
@@ -790,7 +774,6 @@ function openLog(){
   document.getElementById('ov-log').classList.add('open');
 }
 
-// ── 심포지엄 저장/수정/삭제 ──
 async function saveParsed(){
   const name=document.getElementById('ps-name').value.trim(), ds=document.getElementById('ps-start').value;
   if(!name||!ds){ toast('날짜와 심포지엄명은 필수입니다'); return; }
@@ -817,7 +800,6 @@ async function saveEdit(){
 }
 async function delSymp(sid){ if(!confirm('삭제할까요?')) return; const s=data.find(x=>x.id===sid); if(s) addLog('삭제',s.name,s.ds); data=data.filter(x=>x.id!==sid); await saveData(); render(); }
 
-// ── 상세 보기 ──
 function openDetail(sid){
   const s=data.find(x=>x.id===sid); if(!s) return;
   const ds=new Date(s.ds+'T00:00:00'), de=new Date(s.de+'T00:00:00');
@@ -849,7 +831,6 @@ function openDetail(sid){
   document.getElementById('ov-detail').classList.add('open');
 }
 
-// ── 담당자 심포 목록 ──
 function showMemberSymps(name){
   const symps=data.filter(s=>!isPast(s)&&(s.att||[]).some(a=>a.p===name)).sort((a,b)=>a.ds.localeCompare(b.ds));
   const rows=symps.map(s=>{ const att=s.att.filter(a=>a.p===name); const ds=new Date(s.ds+'T00:00:00'); const st=ST[s.status]||ST.open; return `<div style="padding:12px;background:var(--bg2);border-radius:var(--radius);margin-bottom:8px;border:1px solid var(--border)"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-size:12px;font-weight:800;color:var(--accent)">${ds.getMonth()+1}/${ds.getDate()}(${WD[ds.getDay()]})</span><span class="tag ${st.c}" style="margin:0;font-size:11px">${st.l}</span></div><div style="font-size:14px;font-weight:700;margin-bottom:4px">${s.name}</div>${att.map(a=>`<div style="font-size:12px;color:var(--text2)">→ ${a.c}${a.d?' ('+a.d+')':''} <span style="font-size:11px;opacity:.7">${a.st==='reserved'?'🟠예약':'✅확정'}</span></div>`).join('')}</div>`; }).join('');
@@ -857,7 +838,6 @@ function showMemberSymps(name){
   document.getElementById('ov-member-symps').classList.add('open');
 }
 
-// ── 인원 팝업 ──
 const CHECKLIST=['CRM 등록','인원 확인','요청 내용','식당 예약'];
 let _popupSid='', _popupIdx=-1;
 function openAttPopup(e,sid,idx){
@@ -887,7 +867,6 @@ async function closeAttPopup(){
 function popSetStatus(st){ const s=data.find(x=>x.id===_popupSid); if(!s) return; s.att[_popupIdx].st=st; document.getElementById('pop-reserved').className=st==='reserved'?'active-reserved':''; document.getElementById('pop-confirmed').className=st==='confirmed'?'active-confirmed':''; }
 function popToggleCheck(ci){ const s=data.find(x=>x.id===_popupSid); if(!s) return; if(!s.att[_popupIdx].checks) s.att[_popupIdx].checks={}; s.att[_popupIdx].checks[ci]=!s.att[_popupIdx].checks[ci]; const items=document.querySelectorAll('#att-popup .att-check-item'); if(items[ci]){ items[ci].classList.toggle('checked'); items[ci].querySelector('.att-check-icon').textContent=s.att[_popupIdx].checks[ci]?'✓':''; } }
 
-// ── 인원 추가 ──
 const _newChecks={0:false,1:false,2:false,3:false};
 function toggleNewCheck(ci){ _newChecks[ci]=!_newChecks[ci]; const icon=document.getElementById('nck-'+ci); const item=icon?.closest('.att-check-item'); if(icon) icon.textContent=_newChecks[ci]?'✓':''; if(item) item.classList.toggle('checked',!!_newChecks[ci]); }
 function setPersonStatus(st){
@@ -915,22 +894,18 @@ async function savePerson(){
 async function removeAtt(sid,idx){ const s=data.find(x=>x.id===sid); if(!s) return; const r=s.att[idx]; s.att.splice(idx,1); addLog('인원삭제',`${s.name} — ${r.p} → ${r.c}`,s.ds); await saveData(); render(); if(document.getElementById('ov-detail').classList.contains('open')) openDetail(sid); }
 async function toggleAttStatus(sid,idx){ const s=data.find(x=>x.id===sid); if(!s) return; const a=s.att[idx]; a.st=a.st==='reserved'?'confirmed':'reserved'; addLog('수정',`${s.name} — ${a.p} ${a.st==='confirmed'?'확정':'예약'}으로 변경`,s.ds); await saveData(); render(); }
 
-// ── 수정 모달 열기 ──
 function openEdit(sid){ const s=data.find(x=>x.id===sid); if(!s) return; document.getElementById('edit-id').value=sid; document.getElementById('edit-start').value=s.ds; document.getElementById('edit-end').value=s.de; document.getElementById('edit-name').value=s.name; document.getElementById('edit-product').value=s.product||''; document.getElementById('edit-pm').value=s.pm||''; document.getElementById('edit-to').value=s.to||''; document.getElementById('edit-link').value=s.link||''; document.getElementById('edit-status').value=s.status||'open'; document.getElementById('ov-edit').classList.add('open'); }
 
-// ── 사무소 인원 ──
 function openMembers(){ renderMembersList(); document.getElementById('new-member-input').value=''; document.getElementById('ov-members').classList.add('open'); }
 function renderMembersList(){ const members=getMembers(); document.getElementById('members-list').innerHTML=members.map((m,i)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg2);border-radius:var(--radius);margin-bottom:6px;border:1px solid var(--border)"><span style="font-size:14px;font-weight:600">${m}</span><button onclick="deleteMember(${i})" style="background:var(--red-bg);border:none;border-radius:8px;padding:5px 10px;cursor:pointer;color:var(--red-mid);font-size:12px;font-weight:600">삭제</button></div>`).join(''); const sel=document.getElementById('fp-person'); if(sel) sel.innerHTML=members.map(m=>`<option>${m}</option>`).join(''); }
 function addMember(){ const input=document.getElementById('new-member-input'); const name=input.value.trim(); if(!name){ toast('이름을 입력해주세요'); return; } const members=getMembers(); if(members.includes(name)){ toast('이미 있는 이름입니다'); return; } members.push(name); localStorage.setItem(K_MEMBERS,JSON.stringify(members)); input.value=''; renderMembersList(); toast(`${name} 추가됐습니다`); }
 function deleteMember(idx){ const members=getMembers(); if(members.length<=1){ toast('최소 1명은 있어야 합니다'); return; } if(!confirm(`${members[idx]}을(를) 삭제할까요?`)) return; members.splice(idx,1); localStorage.setItem(K_MEMBERS,JSON.stringify(members)); renderMembersList(); toast('삭제됐습니다'); }
 
-// ── 달력 ──
 let currentView='list', calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 function setView(v){ currentView=v; document.getElementById('vt-list').classList.toggle('on',v==='list'); document.getElementById('vt-cal').classList.toggle('on',v==='cal'); document.getElementById('view-list').style.display=v==='list'?'block':'none'; document.getElementById('view-cal').style.display=v==='cal'?'block':'none'; document.getElementById('filter-row').style.display=v==='list'?'block':'none'; if(v==='cal') renderCal(); }
 function calMove(dir){ calMonth+=dir; if(calMonth<0){calMonth=11;calYear--;} if(calMonth>11){calMonth=0;calYear++;} renderCal(); }
 function renderCal(){ const today=new Date(); today.setHours(0,0,0,0); document.getElementById('cal-title').textContent=`${calYear}년 ${calMonth+1}월`; const firstDay=new Date(calYear,calMonth,1).getDay(), lastDate=new Date(calYear,calMonth+1,0).getDate(), prevLast=new Date(calYear,calMonth,0).getDate(); let html=''; for(let i=0;i<42;i++){ let d, isOther=false; const dow=i%7; if(i<firstDay){d=prevLast-(firstDay-i-1);isOther=true;} else if(i>=firstDay+lastDate){d=i-firstDay-lastDate+1;isOther=true;} else d=i-firstDay+1; const dateStr=isOther?null:`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; const isToday=dateStr&&new Date(dateStr+'T00:00:00').getTime()===today.getTime(); let ev=''; if(dateStr) data.filter(s=>s.ds<=dateStr&&s.de>=dateStr).forEach(s=>{ ev+=`<div class="cal-event ${isPast(s)?'past':s.status}" onclick="openEdit('${s.id}')" title="${s.name}">${s.name.split('—')[0].trim()}</div>`; }); html+=`<div class="cal-day${isOther?' other':''}${isToday?' today':''}${dow===0?' sun':''}${dow===6?' sat':''}"><div class="cal-date">${d}</div>${ev}</div>`; } document.getElementById('cal-grid').innerHTML=html; }
 
-// ── 호텔 DB ──
 function openHotels(){ renderHotelsList(); document.getElementById('ov-hotels').classList.add('open'); }
 function renderHotelsList(){ const el=document.getElementById('hotels-list'); if(!hotels.length){ el.innerHTML='<div style="text-align:center;padding:32px;color:var(--text3);font-size:14px">등록된 호텔이 없습니다.<br>심포지엄 등록 시 자동으로 추가됩니다.</div>'; return; } el.innerHTML=hotels.map(h=>`<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg2);border-radius:var(--radius);margin-bottom:8px;border:1px solid var(--border);cursor:pointer" onclick="openHotelDetail('${h.id}')"><div style="width:38px;height:38px;border-radius:10px;background:var(--accent-bg);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🏨</div><div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700">${h.name}</div><div style="font-size:11px;color:var(--text3);margin-top:2px">${[h.phones&&h.phones.length?'📞 '+h.phones.length+'개':'',h.mealImg?'🍽 식사안내':'',h.roomImg?'🛏 객실안내':'',h.memo?'📝 특이사항':''].filter(Boolean).join('  ')||'정보 없음'}</div></div><button onclick="event.stopPropagation();openEditHotel('${h.id}')" style="background:var(--bg4);border:1px solid var(--border);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px">✏️</button></div>`).join(''); }
 function openAddHotel(){ document.getElementById('hotel-edit-title').textContent='호텔 추가'; document.getElementById('hotel-edit-id').value=''; ['hotel-name','hotel-keywords','hotel-meal-img','hotel-room-img','hotel-memo'].forEach(id=>document.getElementById(id).value=''); document.getElementById('hotel-phones-list').innerHTML=''; addPhoneField(); document.getElementById('ov-hotel-edit').classList.add('open'); }
@@ -950,7 +925,6 @@ function openHotelDetail(hid){ const h=hotels.find(x=>x.id===hid); if(!h) return
 async function deleteHotel(hid){ if(!confirm('삭제할까요?')) return; hotels=hotels.filter(x=>x.id!==hid); await saveData(); closeOv('ov-hotel-detail'); renderHotelsList(); toast('삭제됐습니다'); }
 function autoCreateHotel(sympName){ if(!sympName) return; const hotelName=sympName.includes('—')?sympName.split('—')[1].trim():sympName.trim(); if(!hotelName) return; const exists=hotels.some(h=>_hotelMatch(h,hotelName)); if(!exists){ hotels.push({id:'h'+Date.now(),name:hotelName,keywords:[],mealImg:'',roomImg:'',phones:[],memo:''}); toast(`🏨 ${hotelName} 호텔 DB 자동 추가`); } }
 
-// 키워드+부분매칭 기반 호텔 검색
 function _hotelMatch(h, query){
   const q=query.toLowerCase();
   const n=h.name.toLowerCase();
@@ -958,20 +932,15 @@ function _hotelMatch(h, query){
   return (h.keywords||[]).some(k=>{ const kl=k.toLowerCase(); return q.includes(kl)||kl.includes(q); });
 }
 
-// AI 매칭 캐시
 const _hotelMatchCache={};
-
 function getMatchedHotel(sympName){
   if(!sympName) return null;
-  // 캐시 확인
   if(_hotelMatchCache[sympName]!==undefined){
     return _hotelMatchCache[sympName]?hotels.find(h=>h.id===_hotelMatchCache[sympName])||null:null;
   }
-  // 키워드 기반 매칭
   const query=sympName.includes('—')?sympName.split('—')[1].trim():sympName;
   const matched=hotels.find(h=>_hotelMatch(h,query))||hotels.find(h=>_hotelMatch(h,sympName))||null;
   if(matched){ _hotelMatchCache[sympName]=matched.id; return matched; }
-  // AI 매칭 (비동기, 결과는 다음 렌더에 반영)
   if(hotels.length>0) _aiMatchHotel(sympName);
   _hotelMatchCache[sympName]=null;
   return null;
@@ -995,7 +964,6 @@ async function _aiMatchHotel(sympName){
   }catch(e){ /* 조용히 실패 */ }
 }
 
-// ── 채팅 ──
 function openChat(){ document.getElementById('chat-screen').classList.add('show'); }
 function closeChat(){ document.getElementById('chat-screen').classList.remove('show'); }
 function quickAsk(q){ document.getElementById('chat-input').value=q; sendChat(); }
@@ -1006,7 +974,7 @@ async function sendChat(){
   addChatMsg(q,'user'); const thinking=addChatMsg('분석 중...','ai thinking');
   const today=new Date().toISOString().split('T')[0];
   const summary=data.map(s=>{ const attList=(s.att||[]).map(a=>`${a.p}(${a.c})`).join(', '); return `[${s.ds}~${s.de}] ${s.name} | 품목:${s.product||'-'} | PM:${s.pm||'-'} | TO:${s.to||'-'} | 상태:${s.status} | 신청(${(s.att||[]).length}명):${attList||'없음'}`; }).join('\n');
-  const prompt=`오늘 날짜: ${today}\n\n동부1사무소 심포지엄 데이터:\n${summary}\n\n질문: ${q}\n\n답변 규칙: 한국어, 간결하고 실용적으로, 이모지 적절히`;
+  const prompt=`오늘 날짜: ${today}\n\n북부2사무소 심포지엄 데이터:\n${summary}\n\n질문: ${q}\n\n답변 규칙: 한국어, 간결하고 실용적으로, 이모지 적절히`;
   try{
     const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':gm},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.3,maxOutputTokens:1024}})});
     if(!res.ok) throw new Error('API '+res.status);
@@ -1015,7 +983,6 @@ async function sendChat(){
   document.getElementById('chat-messages').scrollTop=99999;
 }
 
-// ── UI 유틸 ──
 function openAddSymp(){ const t=new Date().toISOString().split('T')[0]; document.getElementById('fs-start').value=t; document.getElementById('fs-end').value=t; ['fs-name','fs-product','fs-to','fs-pm','fs-link'].forEach(id=>document.getElementById(id).value=''); document.getElementById('fs-status').value='open'; document.getElementById('mail-paste').value=''; document.getElementById('parse-msg').textContent=''; document.getElementById('parse-result').style.display='none'; switchTab('mail'); document.getElementById('ov-symp').classList.add('open'); }
 function switchTab(t){ document.getElementById('tab-mail').classList.toggle('on',t==='mail'); document.getElementById('tab-manual').classList.toggle('on',t==='manual'); document.getElementById('pane-mail').style.display=t==='mail'?'block':'none'; document.getElementById('pane-manual').style.display=t==='manual'?'block':'none'; }
 function closeOv(id){ document.getElementById(id).classList.remove('open'); }
@@ -1026,7 +993,6 @@ function setBtn(id,disabled,label){ const b=document.getElementById(id); if(!b)r
 let _tt;
 function toast(msg){ const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(_tt); _tt=setTimeout(()=>el.classList.remove('show'),2500); }
 
-// ?reset=1
 if(location.search.includes('reset=1')){ localStorage.removeItem(K_GH); localStorage.removeItem(K_GM); localStorage.removeItem(K_MEMBERS); history.replaceState(null,'',location.pathname); }
 
 if(!ghToken()){ openSetup(); } else { loadData(); }
