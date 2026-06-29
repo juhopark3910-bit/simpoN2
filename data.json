@@ -133,6 +133,18 @@
       "link": "https://www.onvi.co.kr/symposium_7669.html",
       "status": "open",
       "att": []
+    },
+    {
+      "id": "u1782731764214",
+      "name": "실리스칸 X 우루사_The Best Combination 심포지엄 — 힐리언스 선마을 효천서원, 겨울동 (2F)",
+      "ds": "2026-07-11",
+      "de": "2026-07-12",
+      "product": "실리스칸, 우루사",
+      "pm": "송준석",
+      "to": "35명",
+      "link": "",
+      "status": "open",
+      "att": []
     }
   ],
   "hotels": [
@@ -166,6 +178,15 @@
     {
       "id": "h1782731638955",
       "name": "웨스틴 서울 파르나스호텔",
+      "keywords": [],
+      "mealImg": "",
+      "roomImg": "",
+      "phones": [],
+      "memo": ""
+    },
+    {
+      "id": "h1782731764214",
+      "name": "힐리언스 선마을 효천서원, 겨울동 (2F)",
       "keywords": [],
       "mealImg": "",
       "roomImg": "",
