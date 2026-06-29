@@ -34,6 +34,18 @@
             "2": true,
             "3": true
           }
+        },
+        {
+          "p": "최태우",
+          "c": "서울의원",
+          "d": "김병모",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true
+          }
         }
       ]
     }
