@@ -194,7 +194,20 @@
       "to": "확인 필요 (전체 60명)",
       "link": "",
       "status": "open",
-      "att": []
+      "att": [
+        {
+          "p": "박주호",
+          "c": "이창훈신경과의원",
+          "d": "이창훈",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": false
+          }
+        }
+      ]
     }
   ],
   "hotels": [
