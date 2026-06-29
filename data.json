@@ -48,6 +48,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "u1782731604828",
+      "name": "ALL NEW HEART 심포지엄 — DMD",
+      "ds": "2026-07-04",
+      "de": "2026-07-05",
+      "product": "CART BP pro, All NEW thynC, 퍼즐 AI, CGM LIVE",
+      "pm": "하지수",
+      "to": "17명 (전체 35명 ÷ 2개 사무소)",
+      "link": "",
+      "status": "open",
+      "att": []
     }
   ],
   "hotels": [
@@ -63,6 +75,15 @@
     {
       "id": "h1782731501737",
       "name": "르메르디앙 서울 명동",
+      "keywords": [],
+      "mealImg": "",
+      "roomImg": "",
+      "phones": [],
+      "memo": ""
+    },
+    {
+      "id": "h1782731604828",
+      "name": "DMD",
       "keywords": [],
       "mealImg": "",
       "roomImg": "",
