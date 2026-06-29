@@ -71,7 +71,20 @@
       "to": "1명 (전체 54명 ÷ 37개 사무소)",
       "link": "https://www.onvi.co.kr/symposium_7639.html",
       "status": "closed",
-      "att": []
+      "att": [
+        {
+          "p": "최태우",
+          "c": "삼성편한내과",
+          "d": "유동훈",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": false
+          }
+        }
+      ]
     }
   ],
   "hotels": [
