@@ -1,9 +1,31 @@
 {
-  "symps": [],
+  "symps": [
+    {
+      "id": "u1782731501737",
+      "name": "LIXIVISION 심포지엄 — 르메르디앙 서울 명동",
+      "ds": "2026-06-27",
+      "de": "2026-06-28",
+      "product": "릭시아나",
+      "pm": "우찬하",
+      "to": "로컬사업부 릭시아나 MBO 수립처 (MBO 미수립 고객은 별도 안내 없이 삭제 예정이니 참고 부탁 드립니다)",
+      "link": "http://biz.onvi.co.kr/symposium_7596.html",
+      "status": "open",
+      "att": []
+    }
+  ],
   "hotels": [
     {
       "id": "h1782731077451",
       "name": "대웅제약 본관 베어홀(신관 지하1층)",
+      "keywords": [],
+      "mealImg": "",
+      "roomImg": "",
+      "phones": [],
+      "memo": ""
+    },
+    {
+      "id": "h1782731501737",
+      "name": "르메르디앙 서울 명동",
       "keywords": [],
       "mealImg": "",
       "roomImg": "",
