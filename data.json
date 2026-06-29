@@ -60,6 +60,18 @@
       "link": "",
       "status": "open",
       "att": []
+    },
+    {
+      "id": "u1782731638955",
+      "name": "GOL·D 심포지엄 — 웨스틴 서울 파르나스호텔",
+      "ds": "2026-07-11",
+      "de": "2026-07-12",
+      "product": "스토보클로",
+      "pm": "김상보",
+      "to": "1명 (전체 54명 ÷ 37개 사무소)",
+      "link": "https://www.onvi.co.kr/symposium_7639.html",
+      "status": "closed",
+      "att": []
     }
   ],
   "hotels": [
@@ -84,6 +96,15 @@
     {
       "id": "h1782731604828",
       "name": "DMD",
+      "keywords": [],
+      "mealImg": "",
+      "roomImg": "",
+      "phones": [],
+      "memo": ""
+    },
+    {
+      "id": "h1782731638955",
+      "name": "웨스틴 서울 파르나스호텔",
       "keywords": [],
       "mealImg": "",
       "roomImg": "",
