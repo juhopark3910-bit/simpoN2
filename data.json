@@ -169,7 +169,20 @@
       "to": "35명",
       "link": "",
       "status": "open",
-      "att": []
+      "att": [
+        {
+          "p": "김정현",
+          "c": "장수당약국",
+          "d": "OOO",
+          "st": "reserved",
+          "checks": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": false
+          }
+        }
+      ]
     }
   ],
   "hotels": [
