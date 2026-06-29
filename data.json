@@ -132,7 +132,20 @@
       "to": "확인 필요 (전체 35명)",
       "link": "https://www.onvi.co.kr/symposium_7669.html",
       "status": "open",
-      "att": []
+      "att": [
+        {
+          "p": "최태우",
+          "c": "우리의원",
+          "d": "최종수",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": false
+          }
+        }
+      ]
     },
     {
       "id": "u1782731764214",
