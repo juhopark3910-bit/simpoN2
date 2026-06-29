@@ -95,6 +95,18 @@
             "2": true,
             "3": false
           }
+        },
+        {
+          "p": "박주호",
+          "c": "튼튼플러스신경과",
+          "d": "오창헌",
+          "st": "confirmed",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": false
+          }
         }
       ]
     }
