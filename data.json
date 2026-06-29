@@ -10,20 +10,7 @@
       "to": "3명 (전체 30명 ÷ 8개 사무소)",
       "link": "https://www.onvi.co.kr/symposium_7659.html",
       "status": "open",
-      "att": [
-        {
-          "p": "박주호",
-          "c": "ㅇㅇㅇ",
-          "d": "ㅇㅇㅇ",
-          "st": "reserved",
-          "checks": {
-            "0": true,
-            "1": false,
-            "2": false,
-            "3": false
-          }
-        }
-      ]
+      "att": []
     }
   ],
   "hotels": [
