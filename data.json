@@ -1,18 +1,5 @@
 {
-  "symps": [
-    {
-      "id": "u1782731077451",
-      "name": "Day On Symposium — 대웅제약 본관 베어홀(신관 지하1층)",
-      "ds": "2026-07-10",
-      "de": "2026-07-10",
-      "product": "씨콜드프리미엄",
-      "pm": "김한희",
-      "to": "3명 (전체 30명 ÷ 8개 사무소)",
-      "link": "https://www.onvi.co.kr/symposium_7659.html",
-      "status": "open",
-      "att": []
-    }
-  ],
+  "symps": [],
   "hotels": [
     {
       "id": "h1782731077451",
