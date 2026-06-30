@@ -220,6 +220,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "u1782859721485",
+      "name": "펙수클루 Triple Symposium — 라한셀렉트 전주",
+      "ds": "2026-07-25",
+      "de": "2026-07-26",
+      "product": "펙수클루",
+      "pm": "김화산",
+      "to": "확인 필요 (전체 35명)",
+      "link": "https://www.onvi.co.kr/symposium_7696.html",
+      "status": "open",
+      "att": []
     }
   ],
   "hotels": [
@@ -271,6 +283,15 @@
     {
       "id": "h1782732100848",
       "name": "서울 워커힐 비스타",
+      "keywords": [],
+      "mealImg": "",
+      "roomImg": "",
+      "phones": [],
+      "memo": ""
+    },
+    {
+      "id": "h1782859721485",
+      "name": "라한셀렉트 전주",
       "keywords": [],
       "mealImg": "",
       "roomImg": "",
